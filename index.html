@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DevOps Learning Path</title>
+
+<style>
+
+:root{
+--bg:#f4f6fb;
+--card:#ffffff;
+--text:#1f2937;
+--accent:#6366f1;
+}
+
+body.dark{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#e5e7eb;
+--accent:#818cf8;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+}
+
+h1{
+margin:0;
+font-size:26px;
+}
+
+button{
+padding:8px 14px;
+border:none;
+border-radius:8px;
+background:var(--accent);
+color:white;
+cursor:pointer;
+font-size:14px;
+font-weight:500;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.timeline{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+position:relative;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:4px;
+background:var(--accent);
+animation:grow 2s ease forwards;
+}
+
+@keyframes grow{
+from{height:0}
+to{height:100%}
+}
+
+.step{
+position:relative;
+width:50%;
+padding:20px 30px;
+box-sizing:border-box;
+}
+
+.step:nth-child(odd){
+left:0;
+text-align:right;
+}
+
+.step:nth-child(even){
+left:50%;
+}
+
+.card{
+background:var(--card);
+padding:20px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.circle{
+position:absolute;
+top:28px;
+width:16px;
+height:16px;
+border-radius:50%;
+background:var(--accent);
+}
+
+.step:nth-child(odd) .circle{
+right:-8px;
+}
+
+.step:nth-child(even) .circle{
+left:-8px;
+}
+
+.card h3{
+margin-top:0;
+margin-bottom:0;
+}
+
+.content{
+display:none;
+font-size:14px;
+margin-top:14px;
+line-height:1.6;
+text-align:left;
+}
+
+.card.active .content{
+display:block;
+}
+
+.content a{
+color:var(--accent);
+text-decoration:none;
+font-weight:bold;
+word-break:break-all;
+}
+
+.content a:hover{
+text-decoration:underline;
+}
+
+.content ul{
+margin:8px 0;
+padding-left:20px;
+}
+
+.content li{
+margin-bottom:4px;
+}
+
+.topic-item{
+margin-bottom:14px;
+padding-bottom:12px;
+border-bottom:1px solid rgba(128,128,128,0.2);
+}
+
+.topic-item:last-child{
+border-bottom:none;
+margin-bottom:0;
+padding-bottom:0;
+}
+
+@media(max-width:768px){
+
+.timeline::before{
+left:20px;
+}
+
+.step{
+width:100%;
+left:0 !important;
+padding-left:50px;
+text-align:left !important;
+}
+
+.step .circle{
+left:12px !important;
+right:auto;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>DevOps Learning Path</h1>
+<button onclick="toggleDark()">Toggle Dark Mode</button>
+</header>
+
+<div class="timeline">
+
+<!-- Step 1: Git & GitHub -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Git & GitHub</h3>
+<div class="content">
+<p><strong>Why learn it? </strong>Git and GitHub form the foundation of modern software collaboration and DevOps automation. Version control enables teams to track changes, work across isolated branches, review code, and trigger CI/CD pipelines automatically on push or pull requests.</p>
+<p><strong>Key Topics:</strong></p>
+<ul>
+<li>Version control fundamentals and repository lifecycle</li>
+<li>Git CLI essentials: init, clone, add, commit, push, pull, status, diff</li>
+<li>Branching, merging, resolving merge conflicts, and git rebase</li>
+<li>GitHub Pull Requests, code reviews, and protected branches</li>
+<li>SSH key authentication, .gitignore configuration, and repository secrets</li>
+<li>Trunk-based development vs. GitFlow workflows</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Step 2: Docker -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Docker</h3>
+<div class="content">
+<p><strong>Resource: </strong><a href="https://youtu.be/OhnTMWmfTBE?si=AFosIZ1MAWEPtlZA" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">https://youtu.be/OhnTMWmfTBE?si=AFosIZ1MAWEPtlZA</a></p>
+<p><strong>Why learn it? </strong>Docker packages an application together with its runtime dependencies so it can run consistently across development, testing, and production environments.</p>
+<p><strong>Key Topics:</strong></p>
+<ul>
+<li>Images vs. containers</li>
+<li>Dockerfile writing and common instructions</li>
+<li>Volumes and bind mounts</li>
+<li>Networking: bridge, host, and overlay</li>
+<li>Docker Compose for multi-container applications</li>
+<li>Image optimization and multi-stage builds</li>
+<li>Container environment variables and secrets</li>
+<li>Health checks and restart policies</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Step 3: Kubernetes -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Kubernetes</h3>
+<div class="content">
+<p><strong>Resource: </strong><a href="https://youtu.be/rBeyHDKLVqM?si=Tl3-pCYTzgMOPef_" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">https://youtu.be/rBeyHDKLVqM?si=Tl3-pCYTzgMOPef_</a></p>
+<p><strong>Why learn it? </strong>Kubernetes orchestrates containers, providing scheduling, service discovery, scaling, rolling deployments, and self-healing for production workloads.</p>
+<p><strong>Key Topics:</strong></p>
+<ul>
+<li>Pods, Deployments, and Services</li>
+<li>ConfigMaps and Secrets</li>
+<li>Persistent Volumes (PV) and Persistent Volume Claims (PVC)</li>
+<li>Ingress and Nginx Ingress</li>
+<li>Rolling updates and rollbacks</li>
+<li>Resource requests and limits</li>
+<li>Liveness and readiness probes</li>
+<li>Namespaces and basic RBAC</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Step 4: CI/CD Pipelines -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>CI/CD Pipelines</h3>
+<div class="content">
+<p><strong>Resource: </strong><a href="https://youtu.be/y7S2oSjJ8PA?si=t8hGHupydaml9YQ-" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">https://youtu.be/y7S2oSjJ8PA?si=t8hGHupydaml9YQ-</a></p>
+<p><strong>Why learn it? </strong>CI/CD automates the path from source code to a tested and deployable artifact, reducing manual deployment work and improving release consistency.</p>
+<p><strong>Key Topics:</strong></p>
+<ul>
+<li>GitHub Actions workflows</li>
+<li>Docker image building and publishing automation</li>
+<li>Automated unit/integration testing</li>
+<li>Deployment strategies: blue-green and canary</li>
+<li>Secrets management in pipelines</li>
+<li>Environment separation: development, staging, and production</li>
+<li>Rollback and deployment failure handling</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Step 5: AWS (topics) -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>AWS (topics)</h3>
+<div class="content">
+<p><strong>Resource: </strong><a href="https://youtu.be/N4sJj-SxX00?si=wprIVRlQ5bRCfYGx" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">https://youtu.be/N4sJj-SxX00?si=wprIVRlQ5bRCfYGx</a></p>
+<p>Focus first on the core AWS services below. Understand how they connect to form a production deployment architecture rather than studying each service in isolation.</p>
+
+<div class="topic-item">
+<p><strong>3.1 AWS IAM — Identity and Access Management</strong><br>
+<em>Purpose: </em>Controls who or what can access AWS resources. It is the foundation of cloud security.</p>
+<ul>
+<li>Users, Groups, Roles, and Policies</li>
+<li>IAM Roles for ECS Tasks (critical for container security)</li>
+<li>Least-privilege principle</li>
+<li>Service roles vs. instance roles</li>
+<li>Avoid hard-coded AWS access keys in application code</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.2 AWS CLI — Command Line Interface</strong><br>
+<em>Purpose: </em>Provides terminal-based control of AWS resources and is heavily used in automation and CI/CD.</p>
+<ul>
+<li>Installation and configuration with aws configure</li>
+<li>Credential management</li>
+<li>Common S3, EC2, and ECS commands</li>
+<li>Named profiles for dev/prod environments</li>
+<li>Using environment variables and role-based credentials in automation</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.3 AWS EC2 — Elastic Compute Cloud</strong><br>
+<em>Purpose: </em>Provides virtual machines. EC2 is especially useful for understanding the compute layer behind container platforms.</p>
+<ul>
+<li>Instance types and sizing</li>
+<li>Security Groups</li>
+<li>Key pairs and SSH access</li>
+<li>User Data scripts</li>
+<li>Basic AMI and instance lifecycle concepts</li>
+<li>Understand the underlying compute used by EKS worker nodes</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.4 AWS S3 — Simple Storage Service</strong><br>
+<em>Purpose: </em>Object storage for documents, static assets, logs, backups, and other durable files.</p>
+<ul>
+<li>Buckets and objects</li>
+<li>Bucket policies and permissions</li>
+<li>Versioning</li>
+<li>Static website hosting concepts</li>
+<li>Lifecycle policies</li>
+<li>Use case: agent documents, static assets, and backups</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.5 AWS RDS — Relational Database Service</strong><br>
+<em>Purpose: </em>Managed relational databases such as PostgreSQL and MySQL. Useful when an agent application needs structured, transactional data.</p>
+<ul>
+<li>Managed PostgreSQL/MySQL</li>
+<li>Instance classes and storage</li>
+<li>Security Groups and DB subnet groups</li>
+<li>Automated backups</li>
+<li>Read replicas</li>
+<li>Use case: agent conversation history and structured application data</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.6 AWS CloudFormation — Infrastructure as Code</strong><br>
+<em>Purpose: </em>Defines AWS infrastructure using declarative templates so environments can be created consistently and repeatably.</p>
+<ul>
+<li>YAML/JSON templates</li>
+<li>Stacks and change sets</li>
+<li>Parameters and mappings</li>
+<li>Resources and outputs</li>
+<li>Use case: automate VPC, ECS, RDS, and related infrastructure</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.7 AWS Route 53 — DNS Service</strong><br>
+<em>Purpose: </em>Routes domain names to AWS resources and supports DNS-based traffic management.</p>
+<ul>
+<li>Hosted zones</li>
+<li>A, CNAME, and Alias records</li>
+<li>Routing policies: simple, weighted, and latency</li>
+<li>Domain registration concepts</li>
+<li>Use case: custom domains for agent APIs</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.8 AWS VPC — Virtual Private Cloud</strong><br>
+<em>Purpose: </em>Creates an isolated network environment for AWS resources and is critical for production network security.</p>
+<ul>
+<li>CIDR blocks and IP addressing</li>
+<li>Public vs. private subnets</li>
+<li>Route tables and Internet Gateway</li>
+<li>NAT Gateway for private subnets</li>
+<li>Security Groups vs. Network ACLs</li>
+<li>VPC Peering basics</li>
+<li>Critical goal: network isolation for production workloads</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.9 AWS ECS — Elastic Container Service</strong><br>
+<em>Purpose: </em>Primary deployment target for this learning path. ECS runs containers without requiring you to operate a Kubernetes control plane.</p>
+<ul>
+<li>Task Definitions using JSON/YAML-style configuration</li>
+<li>Fargate vs. EC2 launch types</li>
+<li>ECS Services and task scheduling</li>
+<li>Application Load Balancer integration</li>
+<li>Service Auto Scaling</li>
+<li>IAM roles for ECS tasks</li>
+<li>Use case: production Docker containers with managed infrastructure</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>3.10 AWS EKS — Elastic Kubernetes Service</strong><br>
+<em>Purpose: </em>Managed Kubernetes on AWS. Use this after becoming comfortable with Docker, Kubernetes fundamentals, VPC, IAM, and ECS.</p>
+<ul>
+<li>Managed Kubernetes control plane</li>
+<li>Managed and unmanaged node groups</li>
+<li>IAM Roles for Service Accounts (IRSA)</li>
+<li>AWS Load Balancer Controller</li>
+<li>Persistent storage with EBS/EFS</li>
+<li>Use case: complex production agent orchestration and Kubernetes workloads</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Step 6: Terraform -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Terraform</h3>
+<div class="content">
+<div class="topic-item">
+<p><strong>4.1 Terraform Basics</strong><br>
+<em>Why learn it? </em>Terraform is a popular Infrastructure as Code tool and a strong alternative/complement to CloudFormation, especially when infrastructure spans multiple providers.</p>
+<ul>
+<li>HCL (HashiCorp Configuration Language)</li>
+<li>Providers and resources</li>
+<li>State management</li>
+<li>terraform plan and terraform apply workflow</li>
+<li>Variables, outputs, and modules</li>
+<li>Use case: multi-cloud or reusable infrastructure automation</li>
+</ul>
+</div>
+
+<div class="topic-item">
+<p><strong>4.2 SSL/TLS Certificates</strong><br>
+<em>Why learn it? </em>TLS encrypts traffic between clients and your application and enables HTTPS for production APIs and web applications.</p>
+<ul>
+<li>Certificate Authority (CA) concept</li>
+<li>Certificate Signing Requests (CSR)</li>
+<li>Let's Encrypt integration</li>
+<li>HTTPS enforcement and HTTP-to-HTTPS redirection</li>
+<li>Certificate renewal</li>
+<li>Use case: secure HTTPS endpoints for production agents and applications</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Step 7: Projects -->
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Projects</h3>
+<div class="content">
+<p><strong>6. Practical Project Progression:</strong></p>
+
+<div class="topic-item">
+<p><strong>Project 1 — Dockerize an Application: </strong>Containerize a simple backend and frontend; use environment variables, volumes, health checks, and Docker Compose.</p>
+</div>
+
+<div class="topic-item">
+<p><strong>Project 2 — Kubernetes Deployment: </strong>Deploy the same application with Pods/Deployments, Services, ConfigMaps, Secrets, resource limits, and rolling updates.</p>
+</div>
+
+<div class="topic-item">
+<p><strong>Project 3 — CI/CD: </strong>Create a GitHub Actions pipeline that tests the code, builds the Docker image, pushes it to a registry, and deploys it.</p>
+</div>
+
+<div class="topic-item">
+<p><strong>Project 4 — AWS ECS Production Deployment: </strong>Deploy the container to ECS/Fargate inside a VPC, expose it through an ALB, secure it with IAM and HTTPS, and connect it to RDS/S3.</p>
+</div>
+
+<div class="topic-item">
+<p><strong>Project 5 — AWS EKS: </strong>Deploy a Kubernetes version on EKS with managed node groups, AWS Load Balancer Controller, IAM integration, and persistent storage.</p>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+
+function toggleCard(card){
+card.classList.toggle("active")
+}
+
+function toggleDark(){
+document.body.classList.toggle("dark")
+const isDark = document.body.classList.contains("dark")
+localStorage.setItem("theme", isDark ? "dark" : "light")
+}
+
+(function(){
+const savedTheme = localStorage.getItem("theme")
+if(savedTheme === "dark"){
+document.body.classList.add("dark")
+}
+})()
+
+</script>
+
+</body>
+</html>
