@@ -304,7 +304,7 @@ right:auto;
 <p>Focus first on the core AWS services below. Understand how they connect to form a production deployment architecture rather than studying each service in isolation.</p>
 
 <div class="topic-item">
-<p><strong>3.1 AWS IAM — Identity and Access Management</strong><br>
+<p><strong>3.1 AWS IAM â€” Identity and Access Management</strong><br>
 <em>Purpose: </em>Controls who or what can access AWS resources. It is the foundation of cloud security.</p>
 <ul>
 <li>Users, Groups, Roles, and Policies</li>
@@ -316,7 +316,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.2 AWS CLI — Command Line Interface</strong><br>
+<p><strong>3.2 AWS CLI â€” Command Line Interface</strong><br>
 <em>Purpose: </em>Provides terminal-based control of AWS resources and is heavily used in automation and CI/CD.</p>
 <ul>
 <li>Installation and configuration with aws configure</li>
@@ -328,7 +328,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.3 AWS EC2 — Elastic Compute Cloud</strong><br>
+<p><strong>3.3 AWS EC2 â€” Elastic Compute Cloud</strong><br>
 <em>Purpose: </em>Provides virtual machines. EC2 is especially useful for understanding the compute layer behind container platforms.</p>
 <ul>
 <li>Instance types and sizing</li>
@@ -341,7 +341,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.4 AWS S3 — Simple Storage Service</strong><br>
+<p><strong>3.4 AWS S3 â€” Simple Storage Service</strong><br>
 <em>Purpose: </em>Object storage for documents, static assets, logs, backups, and other durable files.</p>
 <ul>
 <li>Buckets and objects</li>
@@ -354,7 +354,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.5 AWS RDS — Relational Database Service</strong><br>
+<p><strong>3.5 AWS RDS â€” Relational Database Service</strong><br>
 <em>Purpose: </em>Managed relational databases such as PostgreSQL and MySQL. Useful when an agent application needs structured, transactional data.</p>
 <ul>
 <li>Managed PostgreSQL/MySQL</li>
@@ -367,7 +367,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.6 AWS CloudFormation — Infrastructure as Code</strong><br>
+<p><strong>3.6 AWS CloudFormation â€” Infrastructure as Code</strong><br>
 <em>Purpose: </em>Defines AWS infrastructure using declarative templates so environments can be created consistently and repeatably.</p>
 <ul>
 <li>YAML/JSON templates</li>
@@ -379,7 +379,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.7 AWS Route 53 — DNS Service</strong><br>
+<p><strong>3.7 AWS Route 53 â€” DNS Service</strong><br>
 <em>Purpose: </em>Routes domain names to AWS resources and supports DNS-based traffic management.</p>
 <ul>
 <li>Hosted zones</li>
@@ -391,7 +391,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.8 AWS VPC — Virtual Private Cloud</strong><br>
+<p><strong>3.8 AWS VPC â€” Virtual Private Cloud</strong><br>
 <em>Purpose: </em>Creates an isolated network environment for AWS resources and is critical for production network security.</p>
 <ul>
 <li>CIDR blocks and IP addressing</li>
@@ -405,7 +405,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.9 AWS ECS — Elastic Container Service</strong><br>
+<p><strong>3.9 AWS ECS â€” Elastic Container Service</strong><br>
 <em>Purpose: </em>Primary deployment target for this learning path. ECS runs containers without requiring you to operate a Kubernetes control plane.</p>
 <ul>
 <li>Task Definitions using JSON/YAML-style configuration</li>
@@ -419,7 +419,7 @@ right:auto;
 </div>
 
 <div class="topic-item">
-<p><strong>3.10 AWS EKS — Elastic Kubernetes Service</strong><br>
+<p><strong>3.10 AWS EKS â€” Elastic Kubernetes Service</strong><br>
 <em>Purpose: </em>Managed Kubernetes on AWS. Use this after becoming comfortable with Docker, Kubernetes fundamentals, VPC, IAM, and ECS.</p>
 <ul>
 <li>Managed Kubernetes control plane</li>
@@ -480,23 +480,23 @@ right:auto;
 <p><strong>6. Practical Project Progression:</strong></p>
 
 <div class="topic-item">
-<p><strong>Project 1 — Dockerize an Application: </strong>Containerize a simple backend and frontend; use environment variables, volumes, health checks, and Docker Compose.</p>
+<p><strong>Project 1 â€” Dockerize an Application: </strong>Containerize a simple backend and frontend; use environment variables, volumes, health checks, and Docker Compose.</p>
 </div>
 
 <div class="topic-item">
-<p><strong>Project 2 — Kubernetes Deployment: </strong>Deploy the same application with Pods/Deployments, Services, ConfigMaps, Secrets, resource limits, and rolling updates.</p>
+<p><strong>Project 2 â€” Kubernetes Deployment: </strong>Deploy the same application with Pods/Deployments, Services, ConfigMaps, Secrets, resource limits, and rolling updates.</p>
 </div>
 
 <div class="topic-item">
-<p><strong>Project 3 — CI/CD: </strong>Create a GitHub Actions pipeline that tests the code, builds the Docker image, pushes it to a registry, and deploys it.</p>
+<p><strong>Project 3 â€” CI/CD: </strong>Create a GitHub Actions pipeline that tests the code, builds the Docker image, pushes it to a registry, and deploys it.</p>
 </div>
 
 <div class="topic-item">
-<p><strong>Project 4 — AWS ECS Production Deployment: </strong>Deploy the container to ECS/Fargate inside a VPC, expose it through an ALB, secure it with IAM and HTTPS, and connect it to RDS/S3.</p>
+<p><strong>Project 4 â€” AWS ECS Production Deployment: </strong>Deploy the container to ECS/Fargate inside a VPC, expose it through an ALB, secure it with IAM and HTTPS, and connect it to RDS/S3.</p>
 </div>
 
 <div class="topic-item">
-<p><strong>Project 5 — AWS EKS: </strong>Deploy a Kubernetes version on EKS with managed node groups, AWS Load Balancer Controller, IAM integration, and persistent storage.</p>
+<p><strong>Project 5 â€” AWS EKS: </strong>Deploy a Kubernetes version on EKS with managed node groups, AWS Load Balancer Controller, IAM integration, and persistent storage.</p>
 </div>
 
 </div>
@@ -525,6 +525,9 @@ document.body.classList.add("dark")
 })()
 
 </script>
+
+<!-- CausalFunnel Analytics Tracker from your live Vercel deployment -->
+<script src="https://analytics-two-rose.vercel.app/tracker.js" defer></script>
 
 </body>
 </html>
